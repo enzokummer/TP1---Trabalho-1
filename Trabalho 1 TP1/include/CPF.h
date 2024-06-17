@@ -6,13 +6,13 @@ class CPF
 {
     public:
         /** Default constructor */
-        CPF();
-        /** Default destructor */
-        ~CPF();
-
-    protected:
+        CPF(numCpf);
+        void setCpf();
+        inline string getCPF
+        bool validarCPF();
 
     private:
+        string numCpf;
 };
 
 #endif // CPF_H

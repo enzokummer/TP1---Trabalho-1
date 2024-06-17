@@ -37,10 +37,24 @@
 		<Unit filename="include/CPF.h" />
 		<Unit filename="include/Codigo.h" />
 		<Unit filename="include/CodigoTitulo.h" />
+		<Unit filename="include/Data.h" />
+		<Unit filename="include/Dinheiro.h" />
+		<Unit filename="include/Estado.h" />
+		<Unit filename="include/Nome.h" />
+		<Unit filename="include/Percentual.h" />
+		<Unit filename="include/Senha.h" />
+		<Unit filename="include/Setor.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/CPF.cpp" />
 		<Unit filename="src/Codigo.cpp" />
 		<Unit filename="src/CodigoTitulo.cpp" />
+		<Unit filename="src/Data.cpp" />
+		<Unit filename="src/Dinheiro.cpp" />
+		<Unit filename="src/Estado.cpp" />
+		<Unit filename="src/Nome.cpp" />
+		<Unit filename="src/Percentual.cpp" />
+		<Unit filename="src/Senha.cpp" />
+		<Unit filename="src/Setor.cpp" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>
