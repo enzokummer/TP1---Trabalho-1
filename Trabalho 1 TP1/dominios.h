@@ -4,6 +4,7 @@
 #include <string>
 #include <stdexcept>
 #include <regex>
+#include <iostream>
 
 using namespace std;
 
@@ -39,6 +40,7 @@ class CPF : public Dominios {
 
 class Data : public Dominios {
     private:
+        bool bissexto(string);
         void validar(string) override;
 };
 
