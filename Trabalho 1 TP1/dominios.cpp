@@ -81,9 +81,11 @@ void Nome::validar(string valor){
             tamNome1 = nome1.length();
             tamNome2 = nome2.length();
     }
+
+
     if(quantosNomes > 2 || caractereInvalido == true
-       || tamanhoNome < 2 || tamanhoNome > 10 || tamNome1 < 2
-       || tamNome1 > 10 || tamNome2 < 2 || tamNome2 >10)
+       || tamanhoNome < 2 || (quantosNomes == 1 && tamanhoNome > 10)
+       || tamNome1 < 2 || tamNome1 > 10 || tamNome2 < 2 || tamNome2 >10)
         throw invalid_argument("Nome invalido.");
 }
 
@@ -108,7 +110,7 @@ void Setor::validar(string valor){
 
     for (const string &setor : setores){
         if (formato == valor){
-            valida = true;
+            valida = true
             break;
         }
     }
