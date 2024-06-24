@@ -5,6 +5,8 @@
 #include <stdexcept>
 #include <regex>
 #include <iostream>
+#inculde <ctype.h>
+#include <stdio.h>
 
 using namespace std;
 
@@ -40,7 +42,7 @@ class CPF : public Dominios {
 
 class Data : public Dominios {
     private:
-        bool bissexto(string);
+        bool isBissexto(string);
         void validar(string) override;
 };
 
