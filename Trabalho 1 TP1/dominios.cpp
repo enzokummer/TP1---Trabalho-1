@@ -90,13 +90,13 @@ void CPF::validar(string valor){
 //Data INCOMPLETO!!
 void Data::validar(string valor){
     if()
-        throw invalid_argument("CPF invalido.");
+        throw invalid_argument("Data invalida.");
 }
 
 //Dinheiro INCOMPLETO!!
 void Dinheiro::validar(string valor){
     if()
-        throw invalid_argument("CPF invalido.");
+        throw invalid_argument("Dinheiro invalido.");
 }
 
 void Estado::validar(string valor){
@@ -152,13 +152,13 @@ void Nome::validar(string valor){
 //Percentual INCOMPLETO!!
 void Percentual::validar(string valor){
     if()
-        throw invalid_argument("CPF invalido.");
+        throw invalid_argument("Percentual invalido.");
 }
 
 //Senha INCOMPLETO!!
 void Senha::validar(string valor){
     if()
-        throw invalid_argument("CPF invalido.");
+        throw invalid_argument("Senha invalida.");
 }
 
 void Setor::validar(string valor){
