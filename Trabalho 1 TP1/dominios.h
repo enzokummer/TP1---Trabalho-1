@@ -39,9 +39,6 @@ class CodTitulo : public Dominios {
 class CPF : public Dominios {
     private:
         void validar(string) override;
-    public:
-        CPF();
-        CPF(const string);
 };
 
 class Data : public Dominios {
@@ -65,10 +62,20 @@ class Nome : public Dominios {
         void validar(string) override;
 };
 
-class Percentual : public Dominios {
+class Percentual {
     private:
-        void validar(string) override;
+        static const int MAX = 100;
+        static const int MIN = 0;
+        int valor
+        void validar(int);
+    public:
+        void setValor(int);
+        int getValor() const;
 };
+
+inline int Percentual::getValor() const{
+    return valor;
+}
 
 class Senha : public Dominios {
     private:
