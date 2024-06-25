@@ -5,7 +5,7 @@
 #include <stdexcept>
 #include <regex>
 #include <iostream>
-#inculde <ctype.h>
+#include <ctype.h>
 #include <stdio.h>
 
 using namespace std;
@@ -16,6 +16,7 @@ class Dominios {
     protected:
         virtual void validar(string);
     public:
+        Dominios(string) {}
         virtual ~Dominios(){}
         void setValor(string);
         string getValor() const;
@@ -38,6 +39,9 @@ class CodTitulo : public Dominios {
 class CPF : public Dominios {
     private:
         void validar(string) override;
+    public:
+        CPF();
+        CPF(const string);
 };
 
 class Data : public Dominios {

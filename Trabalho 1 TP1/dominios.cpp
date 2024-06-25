@@ -1,8 +1,11 @@
 #include "dominios.h"
 
-void Dominios::setValor(string valor){
+void Dominios::setValor(const string& valor){
     validar(valor);
     this->valor = valor;
+}
+Dominios::Dominios(const string& valor){
+    setValor(valor);
 }
 
 void CodPagamento::validar(string valor){
@@ -21,20 +24,77 @@ void CodTitulo::validar(string valor){
     if (siglaValida == "invalida" || tamanhoCodigo != 11)
         throw invalid_argument("Codigo invalido.");
 }
-//CPF INCOMPLETO!!
-void CPF::validar(string valor){
-    if()
+CPF::CPF(){
+    this->valor = '00000000000';
+}
+CPF::CPF(const string& valor){
+    if(validar(valor)){
+        this->valor=valor;
+    }
+    else{
         throw invalid_argument("CPF invalido.");
+    }
+
 }
 
-//Data INCOMPLETO!!
+//CPF INCOMPLETO!!
 void CPF::validar(string valor){
+    // Remover caracteres não numéricos
+        string cpfNumerico = "";
+        for (char c : valor) {
+            if (isdigit(c)) {
+                cpfNumerico += c;
+            }
+        }
+
+        // Verificar se o CPF tem 11 dígitos
+        if (cpfNumerico.length() != 11) {
+            throw invalid_argument("CPF invalido.");
+        }
+
+        // Verificar se todos os dígitos são iguais
+        bool todosIguais = true;
+        for (int i = 1; i < 11; i++) {
+            if (cpfNumerico[i] != cpfNumerico[0]) {
+                todosIguais = false;
+                break;
+            }
+        }
+        if (todosIguais) {
+            throw invalid_argument("CPF invalido.");
+        }
+
+        // Calcular o primeiro dígito verificador
+        int soma = 0;
+        for (int i = 0; i < 9; i++) {
+            soma += (cpfNumerico[i] - '0') * (10 - i);
+        }
+        int resto = soma % 11;
+        int digitoVerificador1 = resto < 2 ? 0 : 11 - resto;
+
+        // Calcular o segundo dígito verificador
+        soma = 0;
+        for (int i = 0; i < 10; i++) {
+            soma += (cpfNumerico[i] - '0') * (11 - i);
+        }
+        resto = soma % 11;
+        int digitoVerificador2 = resto < 2 ? 0 : 11 - resto;
+
+        // Verificar se os dígitos verificadores são iguais aos dígitos do CPF
+        if (cpfNumerico[9] - '0' != digitoVerificador1) || (cpfNumerico[10] - '0' != digitoVerificador2) {
+            throw invalid_argument("CPF invalido.");
+            };
+}
+
+
+//Data INCOMPLETO!!
+void Data::validar(string valor){
     if()
         throw invalid_argument("CPF invalido.");
 }
 
 //Dinheiro INCOMPLETO!!
-void CPF::validar(string valor){
+void Dinheiro::validar(string valor){
     if()
         throw invalid_argument("CPF invalido.");
 }
@@ -90,13 +150,13 @@ void Nome::validar(string valor){
 }
 
 //Percentual INCOMPLETO!!
-void CPF::validar(string valor){
+void Percentual::validar(string valor){
     if()
         throw invalid_argument("CPF invalido.");
 }
 
 //Senha INCOMPLETO!!
-void CPF::validar(string valor){
+void Senha::validar(string valor){
     if()
         throw invalid_argument("CPF invalido.");
 }

@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1719272635 source:c:\users\enzo.kummer\documents\códigos unb\trabalho 1 tp1 (github)\tp1---trabalho-1\trabalho 1 tp1\main.cpp
+	<iostream>
+	"dominios.h"
+
+1719268737 c:\users\enzo.kummer\documents\códigos unb\trabalho 1 tp1 (github)\tp1---trabalho-1\trabalho 1 tp1\dominios.h
+	<string>
+	<stdexcept>
+	<regex>
+	<iostream>
+	<ctype.h>
+	<stdio.h>
+
