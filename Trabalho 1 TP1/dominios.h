@@ -14,9 +14,8 @@ class Dominios {
     private:
         string valor;
     protected:
-        virtual void validar(string);
+        virtual void validar(string) = 0;
     public:
-        Dominios(string) {}
         virtual ~Dominios(){}
         void setValor(string);
         string getValor() const;
@@ -66,7 +65,7 @@ class Percentual {
     private:
         static const int MAX = 100;
         static const int MIN = 0;
-        int valor
+        int valor;
         void validar(int);
     public:
         void setValor(int);

@@ -11,3 +11,15 @@
 	<ctype.h>
 	<stdio.h>
 
+1719341023 source:c:\users\andre\documents\tp1\tp1---trabalho-1\trabalho 1 tp1\main.cpp
+	<iostream>
+	"dominios.h"
+
+1719340272 c:\users\andre\documents\tp1\tp1---trabalho-1\trabalho 1 tp1\dominios.h
+	<string>
+	<stdexcept>
+	<regex>
+	<iostream>
+	<ctype.h>
+	<stdio.h>
+
