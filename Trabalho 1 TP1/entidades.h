@@ -1,4 +1,8 @@
+#ifndef ENTIDADES_H_INCLUDED
+#define ENTIDADES_H_INCLUDED
+
 #include "dominios.h"
+#include "dominios.cpp"
 
 class Entidade{
     public: //Todos métodos abstratos puros. Cabe a cada classe filha implementar. O método "criar" vai ser o construtor de cada classe.
@@ -18,7 +22,7 @@ class Conta : private Entidade{
         Conta(string cpf, string nome, string senha);
         void ler();
         void atualizar(string opcaoAtributo, string novoValor);
-        bool excluir();
+        void excluir();
 };
 
 class Titulo : private Entidade{
@@ -33,7 +37,7 @@ class Titulo : private Entidade{
         Titulo(string codigo, string emissor, string setor, string emissao, string vencimento, string valor);
         void ler();
         void atualizar(string opcaoAtributo, string novoValor);
-        bool excluir();
+        void excluir();
         void listar();
 };
 
@@ -47,7 +51,8 @@ class Pagamento : private Entidade{
         Pagamento(string codigo, string data, int percentual, string estado);
         void ler();
         void atualizar(string opcaoAtributo, string novoValor);
-        bool excluir();
+        void excluir();
         void listar();
 };
 
+#endif // evitar redefinição entidades.h

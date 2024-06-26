@@ -38,6 +38,8 @@ class CodTitulo : public Dominios {
 class CPF : public Dominios {
     private:
         void validar(string) override;
+    public:
+        CPF(string);
 };
 
 class Data : public Dominios {

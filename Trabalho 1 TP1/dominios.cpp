@@ -27,9 +27,56 @@ void CodTitulo::validar(string valor){
     if (siglaValida == "invalida" || tamanhoCodigo != 11)
         throw invalid_argument("Codigo invalido.");
 }
-
 //CPF INCOMPLETO!!
 void CPF::validar(string valor){
+     // Remover caracteres não numéricos
+        string cpfNumerico = "";
+        for (char c : valor) {
+            if (isdigit(c)) {
+                cpfNumerico += c;
+            }
+        }
+
+        // Verificar se o CPF tem 11 dígitos
+        if (cpfNumerico.length() != 11) {
+            throw invalid_argument("CPF Invalido");
+        }
+
+        // Verificar se todos os dígitos são iguais
+        bool todosIguais = true;
+        for (int i = 1; i < 11; i++) {
+            if (cpfNumerico[i] != cpfNumerico[0]) {
+                todosIguais = false;
+                break;
+            }
+        }
+        if (todosIguais) {
+            throw invalid_argument("CPF Invalido");
+        }
+
+        // Calcular o primeiro dígito verificador
+        int soma = 0;
+        for (int i = 0; i < 9; i++) {
+            soma += (cpfNumerico[i] - '0') * (10 - i);
+        }
+        int resto = soma % 11;
+        int digitoVerificador1 = resto < 2 ? 0 : 11 - resto;
+
+        // Calcular o segundo dígito verificador
+        soma = 0;
+        for (int i = 0; i < 10; i++) {
+            soma += (cpfNumerico[i] - '0') * (11 - i);
+        }
+        resto = soma % 11;
+        int digitoVerificador2 = resto < 2 ? 0 : 11 - resto;
+
+        // Verificar se os dígitos verificadores são iguais aos dígitos do CPF
+         if((cpfNumerico[9] - '0' != digitoVerificador1) || (cpfNumerico[10] - '0' != digitoVerificador2)){
+            throw invalid_argument("CPF Invalido");
+         }
+}
+CPF::CPF(string valor){
+    setValor(valor);
 }
 
 //Verifica se eh bissexto

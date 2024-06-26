@@ -9,6 +9,7 @@ Conta::Conta(string cpf, string nome, string senha){
 
 void Conta:ler(){
 
+    cout << "CPF: " + this->cpf.getValor() + "\nNome: " + this->nome.getValor() + "\nSenha: " + this->senha.getValor() << endl;
 }
 
 void Conta:atualizar(){
